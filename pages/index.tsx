@@ -4,13 +4,11 @@ import Head from "next/head";
 const Index: React.FC = () => {
   return (
     <Fragment>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main>hola!</main>
     </Fragment>
   );
 };
+
+export const config = { amp: true };
 
 export default Index;

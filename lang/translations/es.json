@@ -1,5 +1,8 @@
 {
     "common":{
-        "appName": "Adivina la nota!"
+        "appName": "¡Adivina la nota!"
+    },
+    "index": {
+        "title": "¡Adivina la nota!"
     }
 }

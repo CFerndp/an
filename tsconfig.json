@@ -17,7 +17,9 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/models/*": ["models/*"],
-      "@/lang/*": ["lang/*"]
+      "@/lang/*": ["lang/*"],
+      "@/states/*": ["states/*"],
+      "@/theme/*": ["theme/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

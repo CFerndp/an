@@ -1,14 +1,15 @@
 import React, { Fragment } from "react";
-import Head from "next/head";
+
+import { useTranslation } from "react-i18next";
+import PageTemplate from "@/components/PageTemplate";
 
 const Index: React.FC = () => {
+  const { t } = useTranslation("index");
   return (
-    <Fragment>
+    <PageTemplate>
       <main>hola!</main>
-    </Fragment>
+    </PageTemplate>
   );
 };
-
-export const config = { amp: true };
 
 export default Index;

@@ -15,5 +15,8 @@
         "mediumLevelTooltip":"Selecciona este nivel si eres capaz de tocar en el campamento de verano y dejar a tod@s boqueabiert@s con dos acordes :D",
         "hardLevelButton":"Músico de sala de barrio",
         "hardLevelTooltip":"Eres un máquina, te aburres y quieres demostrar que puedes con todo, aunque lo mismo te llevas una sorpresa..."
+    },
+    "guess": {
+        "title": "¡Adivina la nota que suena!"
     }
 }

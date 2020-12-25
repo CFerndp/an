@@ -19,7 +19,8 @@
       "@/models/*": ["models/*"],
       "@/lang/*": ["lang/*"],
       "@/states/*": ["states/*"],
-      "@/theme/*": ["theme/*"]
+      "@/theme/*": ["theme/*"],
+      "@/utils/*": ["utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

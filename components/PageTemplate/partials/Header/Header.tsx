@@ -1,4 +1,4 @@
-import { Flex, Heading, Icon } from "@chakra-ui/react";
+import { Flex, Heading, Icon, Link } from "@chakra-ui/react";
 import { faMusic } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
@@ -20,12 +20,16 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
       alignItems="center"
       h="100%"
     >
-      <Heading as="h1" size="lg" isTruncated>
-        {title}
-      </Heading>
-      <Icon w={8} h={8} color="green.400" marginLeft={2}>
-        <FontAwesomeIcon icon={faMusic} />
-      </Icon>
+      <Link href="/">
+        <Flex>
+          <Heading as="h1" size="lg" isTruncated>
+            {title}
+          </Heading>
+          <Icon w={8} h={8} color="green.400" marginLeft={2}>
+            <FontAwesomeIcon icon={faMusic} />
+          </Icon>
+        </Flex>
+      </Link>
     </Flex>
   );
 };

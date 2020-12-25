@@ -15,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
       borderTopColor="green.400"
       borderStyle="solid"
       borderBottom="1px"
-      borderBottomColor="gray.100"
+      borderBottomColor="green.100"
       boxShadow="base"
       alignItems="center"
       h="100%"

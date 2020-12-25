@@ -2,6 +2,10 @@
     "common":{
         "appName": "¡Adivina la nota!"
     },
+    "footer": {
+        "desc":"¡Adivina la nota! Open Source Demo Version",
+        "copy": "@CFerndp {{year}}"
+    },
     "index": {
         "title": "¡Adivina la nota!"
     }

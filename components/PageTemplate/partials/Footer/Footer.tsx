@@ -15,10 +15,10 @@ const Footer: React.FC = () => {
       borderTop="1px"
       borderTopColor="green.100"
       boxShadow="base"
-      alignItems="flex-start"
-      justifyContent="space-evenly"
+      alignItems="center"
+      justifyContent="space-between"
       h="100%"
-      direction="column"
+      direction="row"
     >
       <Tag borderRadius="full" variant="solid" colorScheme="blue" fontSize="xs">
         <Link href="https://github.com/CFerndp/an" isExternal>

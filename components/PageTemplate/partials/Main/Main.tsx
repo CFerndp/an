@@ -5,7 +5,7 @@ const Main: React.FC = ({ children }) => {
   return (
     <Center w="100%" h="100%">
       <Box
-        maxW="lg"
+        maxW="xxl"
         w="100%"
         h="80%"
         borderWidth="1px"

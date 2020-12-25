@@ -1,4 +1,3 @@
-// adjust your pages/_document.js
 import { ColorModeScript } from "@chakra-ui/react";
 import Document, {
   Html,

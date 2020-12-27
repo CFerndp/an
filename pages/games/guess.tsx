@@ -1,14 +1,16 @@
-import React, { memo, useCallback, useEffect, useState } from "react";
+import React, { Fragment, useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import { useTranslation } from "react-i18next";
 import PageTemplate from "@/components/PageTemplate";
-import { Grid, GridItem, Heading, Text } from "@chakra-ui/react";
+import { Button, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { parseLevel } from "@/models/games/Level";
 import { GuessGame } from "@/models/games/guess/GuessGame";
 
-import GuessRoundComponent from "./partials/GuessRound";
+import GuessRoundComponent from "./guess/partials/GuessRound";
 import { GuessAnswer } from "@/models/games/guess/GuessAnswer";
+import StatsViewer from "@/components/StatsViewer";
+import Paths from "@/utils/Paths";
 
 const GuessGamePage: React.FC = () => {
   const { t } = useTranslation("guess");
@@ -19,6 +21,8 @@ const GuessGamePage: React.FC = () => {
 
   const [game] = useState(new GuessGame(realLevel));
   const [round, setRound] = useState(() => game.getNextRound());
+
+  const goHome = () => router.push(Paths.Default);
 
   const onNext = useCallback(
     (guess: GuessAnswer) => {
@@ -67,7 +71,13 @@ const GuessGamePage: React.FC = () => {
               level={game.level}
             />
           ) : (
-            <Text isTruncated>Finished: {JSON.stringify(game.stats)}</Text>
+            <Flex direction="column" justifyContent="space-evenly" h="100%">
+              <Text align="center">{t("finishedRound")}</Text>
+              <StatsViewer stats={game.stats} />
+              <Button onClick={goHome} colorScheme="green" isFullWidth>
+                {t("common:accept")}
+              </Button>
+            </Flex>
           )}
         </GridItem>
       </Grid>

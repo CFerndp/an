@@ -2,7 +2,13 @@
     "common":{
         "appName": "¡Adivina la nota!",
         "accept":"Aceptar",
-        "cancel": "Cancelar"
+        "cancel": "Cancelar",
+        "stats": {
+            "numberRounds": "Número de rondas",
+            "errors": "Errores",
+            "success": "Aciertos",
+            "time": "Tiempo"
+        }
     },
     "footer": {
         "desc":"Open Source Demo Version",
@@ -30,6 +36,7 @@
         "toast":{
             "title":"¡Bien hecho!",
             "msg": "¡Vaya oido, has acertado!"
-        }
+        },
+        "finishedRound": "¡Ronda Acabada!"
     }
 }

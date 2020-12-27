@@ -19,6 +19,7 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ headTitle, children }) => {
       </Head>
       <Grid
         h="100vh"
+        maxH="100vh"
         templateRows="10% auto 15%"
         templateColumns="1fr 7fr 1fr"
         templateAreas={`"header header header" ". main ." "footer footer footer"`}

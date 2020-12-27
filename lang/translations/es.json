@@ -1,6 +1,8 @@
 {
     "common":{
-        "appName": "¡Adivina la nota!"
+        "appName": "¡Adivina la nota!",
+        "accept":"Aceptar",
+        "cancel": "Cancelar"
     },
     "footer": {
         "desc":"Open Source Demo Version",
@@ -19,6 +21,15 @@
     "guess": {
         "title": "¡Adivina la nota que suena!",
         "roundCounter": "Ronda {{actualRound}} de {{totalRound}}",
-        "wellDone": "¡Bien Hecho!"
+        "wellDone": "¡Bien Hecho!",
+        "modal": {
+            "title": "¡Ups!",
+            "descrAnswer": "Me temo que has fallado, esta era la respuesta correcta",
+            "descrGuess": "Esta ha sido tu respuesta"
+        },
+        "toast":{
+            "title":"¡Bien hecho!",
+            "msg": "¡Vaya oido, has acertado!"
+        }
     }
 }

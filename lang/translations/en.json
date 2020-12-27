@@ -1,5 +1,31 @@
 {
     "common":{
-        "appName": "Adivina la nota!"
+        "appName": "¡Adivina la nota!",
+        "accept":"Aceptar",
+        "cancel": "Cancelar"
+    },
+    "footer": {
+        "desc":"Open Source Demo Version",
+        "copy": "@CFerndp {{year}}"
+    },
+    "index": {
+        "title": "¡Bienvenid@!",
+        "subtitle":"Selecciona dificultad",
+        "easyLevelButton":"Músico de habitación",
+        "easyLevelTooltip":"Selecciona este nivel si al tocar te piden que te encierres en tu habitación y con la puerta bien cerrada ^^'",
+        "mediumLevelButton":"Músico de campamento",
+        "mediumLevelTooltip":"Selecciona este nivel si eres capaz de tocar en el campamento de verano y dejar a tod@s boqueabiert@s con dos acordes :D",
+        "hardLevelButton":"Músico de sala de barrio",
+        "hardLevelTooltip":"Eres un máquina, te aburres y quieres demostrar que puedes con todo, aunque lo mismo te llevas una sorpresa..."
+    },
+    "guess": {
+        "title": "¡Adivina la nota que suena!",
+        "roundCounter": "Ronda {{actualRound}} de {{totalRound}}",
+        "wellDone": "¡Bien Hecho!",
+        "modal": {
+            "title": "¡Ups!",
+            "descrAnswer": "Me temo que has fallado, esta era la respuesta correcta",
+            "descrGuess": "Esta ha sido tu respuesta"
+        }
     }
 }

@@ -12,6 +12,7 @@ import React, { useEffect } from "react";
 interface MusicBoxProps {
   note: Note;
   isAmerican?: boolean;
+  isError?: Boolean;
   isPlayable?: boolean;
   isHidden?: boolean;
   onClick?: () => void;
@@ -21,6 +22,7 @@ const MusicBox: React.FC<MusicBoxProps> = ({
   note,
   isAmerican = true,
   isHidden = false,
+  isError = false,
   isPlayable = true,
   onClick = () => {},
 }) => {
@@ -44,7 +46,7 @@ const MusicBox: React.FC<MusicBoxProps> = ({
       borderWidth="1px"
       borderRadius="lg"
       borderColor="green.200"
-      bg="green.100"
+      bg={`${isError ? "red" : "green"}.100`}
       overflow="hidden"
       onClick={onClickHandle}
       onDoubleClick={onClick}

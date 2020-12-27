@@ -1,7 +1,7 @@
 export type Level = "easy" | "medium" | "hard";
 
 export const parseLevel = (level: string) => {
-  const handleString = level.toLowerCase().trim();
+  const handleString = level ? level.toLowerCase().trim() : "easy";
 
   if (handleString === "hard") {
     return "hard" as Level;

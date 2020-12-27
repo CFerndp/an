@@ -12,7 +12,7 @@ export class GuessGame implements Game {
   stats: Stats;
 
   constructor(level: Level) {
-    this.actualRound = 0;
+    this.actualRound = -1;
     this.level = level;
     this.rounds = [];
 
@@ -37,8 +37,8 @@ export class GuessGame implements Game {
 
   getNextRound() {
     if (this.hasMoreRounds()) {
-      const round = this.rounds[this.actualRound];
       this.actualRound++;
+      const round = this.rounds[this.actualRound];
 
       return round;
     } else {

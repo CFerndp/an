@@ -17,6 +17,8 @@
         "hardLevelTooltip":"Eres un máquina, te aburres y quieres demostrar que puedes con todo, aunque lo mismo te llevas una sorpresa..."
     },
     "guess": {
-        "title": "¡Adivina la nota que suena!"
+        "title": "¡Adivina la nota que suena!",
+        "roundCounter": "Ronda {{actualRound}} de {{totalRound}}",
+        "wellDone": "¡Bien Hecho!"
     }
 }

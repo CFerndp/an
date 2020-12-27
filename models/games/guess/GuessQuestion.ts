@@ -1,20 +1,19 @@
-import { GuessAnswer } from './GuessAnswer';
-import { getAudioNote, Note } from './../Note';
-import { Question } from './../Question';
+import { GuessAnswer } from "./GuessAnswer";
+import { getAudioNote, Note } from "./../Note";
+import { Question } from "./../Question";
 
 export class GuessQuestion implements Question {
+  noteToGuess: Note;
 
-    private noteToGuess: Note;
+  constructor(note: Note) {
+    this.noteToGuess = note;
+  }
 
-    constructor(note: Note) {
-        this.noteToGuess = note;
-    }
+  getNoteSound() {
+    return getAudioNote(this.noteToGuess);
+  }
 
-    getNoteSound() {
-        return getAudioNote(this.noteToGuess);
-    }
-    
-    checkAnswer(answer: GuessAnswer) {
-        return this.noteToGuess === answer.getNote();
-    }
+  checkAnswer(answer: GuessAnswer) {
+    return this.noteToGuess === answer.getNote();
+  }
 }

@@ -1,3 +1,4 @@
+import { shuffle } from "@/utils/shuffleArray";
 import { Level } from "../Level";
 import { getRandomNote, Note } from "../Note";
 import { Round } from "../Round";
@@ -35,5 +36,7 @@ export class GuessRound implements Round {
         new GuessAnswer(getRandomNote([correctNote, ...answerNotes]))
       );
     }
+
+    this.answers = shuffle(this.answers);
   }
 }

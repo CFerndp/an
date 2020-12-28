@@ -49,12 +49,17 @@ const GuessGamePage: React.FC = () => {
 
   return (
     <PageTemplate>
-      <Grid h="100%" w="100%" templateRows="1fr 1fr 5fr">
+      <Grid h="100%" w="100%" templateRows="1fr 1fr 1fr 5fr">
         <GridItem>
           <Heading textAlign="center">{t("title")}</Heading>
         </GridItem>
         <GridItem>
-          <Text as="h3" fontSize="2xl" textAlign="center">
+          <Text as="h3" fontSize="3xl" textAlign="center">
+            {t("instructions")}
+          </Text>
+        </GridItem>
+        <GridItem>
+          <Text as="h4" fontSize="2xl" textAlign="center">
             {round
               ? t("roundCounter", {
                   actualRound: game.actualRound + 1,

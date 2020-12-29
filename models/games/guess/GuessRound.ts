@@ -6,7 +6,7 @@ import { GuessAnswer } from "./GuessAnswer";
 import { GuessQuestion } from "./GuessQuestion";
 
 const EASY_FALSE_ASNWERS = 1;
-const MEDIUM_FALSE_ASNWERS = 2;
+const MEDIUM_FALSE_ASNWERS = 1;
 const HARD_FALSE_ASNWERS = 3;
 
 export class GuessRound implements Round {

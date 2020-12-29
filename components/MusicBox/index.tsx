@@ -42,7 +42,7 @@ const MusicBox: React.FC<MusicBoxProps> = ({
     if (isHidden) {
       audioNote.play();
     }
-  }, []);
+  }, [note]);
 
   return (
     <Box

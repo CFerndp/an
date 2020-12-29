@@ -12,11 +12,22 @@ import React, { useCallback, useEffect, useState } from "react";
 interface MusicBoxProps {
   note: Note;
   isAmerican?: boolean;
-  isError?: Boolean;
+  isError?: boolean;
   isPlayable?: boolean;
   isHidden?: boolean;
+  isSelected?: boolean;
   onClick?: () => void;
 }
+
+const getBGColor = (isError: boolean, isSelected: boolean) => {
+  if (isError) {
+    return "red";
+  } else if (isSelected) {
+    return "blue";
+  } else {
+    return "green";
+  }
+};
 
 const MusicBox: React.FC<MusicBoxProps> = ({
   note,
@@ -24,6 +35,7 @@ const MusicBox: React.FC<MusicBoxProps> = ({
   isHidden = false,
   isError = false,
   isPlayable = true,
+  isSelected = false,
   onClick = () => {},
 }) => {
   const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
@@ -32,6 +44,8 @@ const MusicBox: React.FC<MusicBoxProps> = ({
     if (isPlayable && audio) {
       audio.play();
     }
+
+    onClick();
   }, [audio]);
 
   useEffect(() => {
@@ -50,10 +64,9 @@ const MusicBox: React.FC<MusicBoxProps> = ({
       borderWidth="1px"
       borderRadius="lg"
       borderColor="green.200"
-      bg={`${isError ? "red" : "green"}.100`}
+      bg={`${getBGColor(isError, isSelected)}.100`}
       overflow="hidden"
       onClick={onClickHandle}
-      onDoubleClick={onClick}
       textAlign="center"
       textColor="blue.500"
     >

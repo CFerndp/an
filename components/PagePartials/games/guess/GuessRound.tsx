@@ -3,13 +3,14 @@ import { GuessAnswer } from "@/models/games/guess/GuessAnswer";
 import { GuessRound } from "@/models/games/guess/GuessRound";
 import { Level } from "@/models/games/Level";
 import {
+  Button,
   Flex,
   useDisclosure,
   useToast,
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
-import React, { Fragment, useCallback, useState } from "react";
+import React, { Fragment, useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import GuessFeedbackModal from "./GuessFeedbackModal";
 
@@ -27,46 +28,62 @@ const GuessRoundComponent: React.FC<GuessRoundComponentProps> = ({
   const { t } = useTranslation("guess");
   const { isOpen, onToggle } = useDisclosure();
   const toast = useToast();
-  const [answer, setAnswer] = useState<GuessAnswer>(round.answers[0]);
+  const [answer, setAnswer] = useState<GuessAnswer | null>(() => null);
 
-  const getOnClick = (answer: GuessAnswer) => () => {
-    if (!round.question.checkAnswer(answer)) {
+  const getOnClick = useCallback(
+    (answer: GuessAnswer) => () => {
       setAnswer(answer);
-      onToggle();
-    } else {
-      toast({
-        title: t("toast.title"),
-        description: t("toast.msg"),
-        status: "success",
-        duration: 800,
-        isClosable: true,
-      });
-      onNext(answer);
+    },
+    []
+  );
+
+  const onClickNext = useCallback(() => {
+    if (answer) {
+      if (!round.question.checkAnswer(answer)) {
+        onToggle();
+      } else {
+        toast({
+          title: t("toast.title"),
+          description: t("toast.msg"),
+          status: "success",
+          duration: 800,
+          isClosable: true,
+        });
+        onNext(answer);
+      }
     }
-  };
+  }, [answer]);
 
   const onCloseModal = useCallback(() => {
-    onToggle();
-    onNext(answer);
+    if (answer) {
+      onToggle();
+      onNext(answer);
+    }
   }, [answer]);
+
+  useEffect(() => setAnswer(null), [round]);
 
   return (
     <Fragment>
       <Flex direction="column" w="100%">
         <MusicBox note={round.question.noteToGuess} isHidden />
         <Wrap marginTop={5} align="center" justify="center">
-          {round.answers.map((answer, index) => (
+          {round.answers.map((itemAnswer, index) => (
             <WrapItem w="7rem" key={`musicboxresponse-${index}`}>
               <MusicBox
-                note={answer.getNote()}
-                onClick={getOnClick(answer)}
+                isSelected={itemAnswer === answer}
+                note={itemAnswer.getNote()}
+                onClick={getOnClick(itemAnswer)}
                 isPlayable={level === "easy"}
               />
             </WrapItem>
           ))}
         </Wrap>
+        <Button marginTop={5} onClick={onClickNext} isDisabled={!answer}>
+          {t("nextButton")}
+        </Button>
       </Flex>
-      {isOpen && (
+      {isOpen && answer && (
         <GuessFeedbackModal
           isOpen={isOpen}
           question={round.question.noteToGuess}

@@ -29,6 +29,7 @@
         "instructions":"Double tap to select the answer",
         "roundCounter": "{{actualRound}} of {{totalRound}} rounds",
         "wellDone": "Well done!",
+        "nextButton": "Next",
         "modal": {
             "title": "¡Ups!",
             "descrAnswer": "You failed, this is the correct answer",

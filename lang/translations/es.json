@@ -29,6 +29,7 @@
         "instructions":"Toca dos veces para seleccionar la respuesta",
         "roundCounter": "Ronda {{actualRound}} de {{totalRound}}",
         "wellDone": "¡Bien Hecho!",
+        "nextButton": "Siguiente",
         "modal": {
             "title": "¡Ups!",
             "descrAnswer": "Me temo que has fallado, esta era la respuesta correcta",

@@ -7,7 +7,7 @@ import { Button, Flex, Grid, GridItem, Heading, Text } from "@chakra-ui/react";
 import { parseLevel } from "@/models/games/Level";
 import { GuessGame } from "@/models/games/guess/GuessGame";
 
-import GuessRoundComponent from "./guess/partials/GuessRound";
+import GuessRoundComponent from "@/components/PagePartials/games/guess/GuessRound";
 import { GuessAnswer } from "@/models/games/guess/GuessAnswer";
 import StatsViewer from "@/components/StatsViewer";
 import Paths from "@/utils/Paths";

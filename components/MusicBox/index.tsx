@@ -7,7 +7,7 @@ import {
 import { Box, Text } from "@chakra-ui/react";
 import { faMusic } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 interface MusicBoxProps {
   note: Note;
@@ -26,15 +26,19 @@ const MusicBox: React.FC<MusicBoxProps> = ({
   isPlayable = true,
   onClick = () => {},
 }) => {
-  const audioNote = getAudioNote(note);
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
 
-  const onClickHandle = () => {
-    if (isPlayable) {
-      audioNote.play();
+  const onClickHandle = useCallback(() => {
+    if (isPlayable && audio) {
+      audio.play();
     }
-  };
+  }, [audio]);
 
   useEffect(() => {
+    const audioNote = getAudioNote(note);
+
+    setAudio(audioNote);
+
     if (isHidden) {
       audioNote.play();
     }
